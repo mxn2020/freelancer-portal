@@ -1,80 +1,94 @@
 # Freelancer Client Portal
 
-## Pages & Features
+Manage freelance projects, clients, invoices, and time tracking.
 
-### 1. Client Dashboard (Client View)
-- Active projects with status & progress
-- Recent deliverables & files
-- Outstanding invoices
-- Upcoming milestones
-- Message inbox
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Freelancer Dashboard
-- Active clients & projects overview
-- Revenue this month / quarter
-- Hours tracked this week
-- Pending proposals & invoices
-- Upcoming deadlines
+## Tech Stack
 
-### 3. Clients
-- Client list with status filters (active, past, prospect)
-- Client profile: company, contact info, projects, billing
-- Add / edit / archive clients
-- Client onboarding checklist
-- Communication history
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Projects
-- Project list with status (proposal, active, review, completed)
-- Create project (client, scope, deliverables, timeline, budget)
-- Project detail page: tasks, milestones, files, notes
-- Milestone tracking with due dates
-- Status updates & change log
+## Getting Started
 
-### 5. Proposals & Contracts
-- Create proposals (scope, timeline, pricing, terms)
-- Proposal templates
-- Client review & approval workflow
-- Contract generation from proposal
-- E-signature support
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Tasks & Time Tracking
-- Task board per project (kanban)
-- Time entry per task (timer + manual)
-- Weekly timesheet view
-- Billable hours summary
-- Task comments & attachments
+## License
 
-### 7. Files & Deliverables
-- File repository per project
-- Upload deliverables for client review
-- Client approval / revision request
-- Version history
-- Secure file sharing links
+MIT © Mehdi Nabhani
 
-### 8. Invoicing & Payments
-- Generate invoice from tracked time or fixed price
-- Recurring invoices
-- Payment link generation
-- Payment status tracking (sent, viewed, paid, overdue)
-- Late payment reminders
-- Revenue & tax reports
+---
 
-### 9. Messages
-- Threaded messaging per project
-- File attachments in messages
-- @mention notifications
-- Client-facing vs. internal notes
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Reports
-- Revenue by client, project, period
-- Hours worked breakdown
-- Project profitability analysis
-- Client retention & satisfaction
-- Export as PDF / CSV
+# {{APP_TITLE}}
 
-### 11. Settings
-- Profile & portfolio link
-- Branding (logo, colors for client portal)
-- Default payment terms
-- Notification preferences
-- Tax & currency configuration
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
